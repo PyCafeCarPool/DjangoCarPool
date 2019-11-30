@@ -1,0 +1,22 @@
+version: 2.1
+jobs:
+    build:
+        docker: 
+            - image: circleci/python:3.7.3
+        working_directory: ~/CarPool
+        steps:
+            - checkout # check out the code in the project directory
+            - run:
+                name: run tests
+                command: |
+                    python3 -m venv env
+                    source ./env/bin/activate
+                    pip3 install --upgrade pip
+                    pip3 install -r requirements.txt
+                    mkdir test-reports
+                    pytest
+            - store_test_results:
+                path: test-reports
+
+            - store_artifacts:
+                path: test-reports 
