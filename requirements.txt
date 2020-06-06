@@ -1,6 +1,6 @@
 attrs==19.3.0
 Babel==2.7.0
-Django==2.2.7
+Django==2.2.13
 django-phonenumber-field==3.0.1
 django-tables2==2.2.1
 importlib-metadata==0.23
